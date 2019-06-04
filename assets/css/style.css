@@ -1,0 +1,68 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-image: url("../images/background1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+}
+
+p {
+    font-size:1.25vw;
+}
+
+#title {
+    padding-top: 5%;
+}
+
+#bulbasaur1 {
+    background-color: #49896F;
+    border: 3px solid black;
+}
+
+#bulbasaur2 {
+    background-color: #7EC8AC;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+}
+
+#squirtle1 {
+    background-color: #55A3AB;
+    border: 3px solid black;
+}
+
+#squirtle2 {
+    background-color: #96D4CF;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+}
+
+#charmander1 {
+    background-color: #F15F3E;
+    border: 3px solid black;
+}
+
+#charmander2 {
+    background-color: #F47931;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+}
+
+#pikachu1 {
+    background-color: #FAD61D;
+    border: 3px solid black;
+}
+
+#pikachu2 {
+    background-color: #FFD44A;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+}
