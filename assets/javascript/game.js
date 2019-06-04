@@ -1,11 +1,15 @@
 $(document).ready(function(){
 
+    var player;
     var player_hp;
     var player_attack;
+    var current_attack;
+    var cpu;
     var cpu_hp;
-    var cpu_attack;
     var cpu_counter;
     var fights = [];
+    var fighting = false;
+    var end = false;
 
     var bulbasaur = {
         name : "Bulbasaur",
@@ -52,6 +56,16 @@ $(document).ready(function(){
             "background-image": "url('./assets/images/background1.png')"
         });
         $(".main").hide();
+        $("#bulbasaur-js2").show();
+        $("#squirtle-js2").show();
+        $("#charmander-js2").show();
+        $("#pikachu-js2").show();
+        $("#attack").text("Attack!");
+        $("#comments").html("");
+        $(".start").show();
+        fights = [];
+        fighting = false;
+        end = false;
     }
 
     function startGame(pokemon) {
@@ -66,8 +80,10 @@ $(document).ready(function(){
         $(".player-img2").attr("id", pokemon.name.toLowerCase() + "2");
         $("#player-name").text(pokemon.name);
 
+        player = pokemon.name;
         player_hp = pokemon.hp;
         player_attack = pokemon.attack;
+        current_attack = pokemon.attack;
 
         $("#player-hp").html(player_hp);
 
@@ -78,6 +94,7 @@ $(document).ready(function(){
     };
 
     function setFighter(pokemon) {
+        $("#comments").html("");
         $("body").css({
             "background-image": "url('./" + pokemon.bg + "')"
         }); 
@@ -87,16 +104,51 @@ $(document).ready(function(){
         $(".cpu-img1").attr("src", pokemon.img);
         $(".cpu-img1").attr("id", pokemon.name.toLowerCase() + "1");
         $(".cpu-img2").attr("id", pokemon.name.toLowerCase() + "2");
+        $("#opponent").text(pokemon.name);
         $("#cpu-name").text(pokemon.name);
 
+        cpu = pokemon.name;
         cpu_hp = pokemon.hp;
-        cpu_attack = pokemon.attack;
         cpu_counter = pokemon.counter;
 
         $("#cpu-hp").html(cpu_hp);
 
-        $(".add-pokemon " + "#" + pokemon.name.toLowerCase() + "-js2").hide();
+        $("#" + pokemon.name.toLowerCase() + "-js2").hide();
         $("#cpu").show();
+
+        fights.push(pokemon);
+        fighting = true;
+    }
+
+    function battle() {
+        cpu_hp -= current_attack;
+        player_hp -= cpu_counter;
+        if (cpu_hp <= 0) {
+            if (fights.length === 3) {
+                $("#comments").html("<p>Congrats! You did it! You Won!</p>")
+                $("#attack").text("Restart Game");
+                $("#cpu").hide();
+                end = true;
+            } else {
+                $("#comments").html("<p>You have defeated " + cpu + "! Please choose another Pokemon to Battle!</p>")
+                $("#cpu").hide();
+                player_hp += cpu_counter;
+                current_attack += player_attack;
+                fighting = false;
+            }
+        } else if (player_hp <= 0) {
+            player_hp = 0;
+            $("#player-hp").html(player_hp);
+            $("#cpu-hp").html(cpu_hp);
+            $("#comments").html("Your Pokemon has lost the battle. Please try again!")
+            $("#attack").text("Restart Game");
+            end = true;
+        } else {
+            $("#player-hp").html(player_hp);
+            $("#cpu-hp").html(cpu_hp);
+            $("#comments").html("<p>Your " + player + " has attacked " + cpu + " for " + current_attack + " damage. " + cpu + " has attacked " + player + " back for " + cpu_counter + " damage.</p>");
+            current_attack += player_attack;
+        }
     }
 
     reset();
@@ -117,8 +169,6 @@ $(document).ready(function(){
     $("#pikachu-js1").on("click", function() {
         startGame(pikachu);
     });
-
-    var fighting = false;
 
     $("#bulbasaur-js2").on("click", function() {
         if (fighting === false) {
@@ -141,6 +191,20 @@ $(document).ready(function(){
     $("#pikachu-js2").on("click", function() {
         if (fighting === false) {
             setFighter(pikachu);
+        }
+    });
+
+    $("#attack").on("click", function() {
+        if (end) {
+            reset();
+        } else {
+            if (fighting === false) {
+                if (fights.length === 0) {
+                    $("#comments").html("<p>Please select a Pokemon to Battle!</p>");
+                } 
+            } else {
+                battle();
+            }
         }
     });
     
