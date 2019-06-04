@@ -23,7 +23,7 @@
 
 <body>
 
-    <div class="container">
+    <div class="container start">
         <div class="row">
             <div class="col text-center" id="title">
                 <h1>Pokemon RPG</h1>
@@ -32,32 +32,103 @@
         </div>
 
         <div class="row">
-            <div class="col-md-3 text-center py-5" id="bulbasaur-js">
+            <div class="col-md-3 text-center py-5" id="bulbasaur-js1">
                 <img src="assets/images/bulbasaur.png" class="img-fluid w-100 h-100" alt="Bulbasaur" id="bulbasaur1">
                 <div class="p-3" id="bulbasaur2">
                     <p>Bulbasaur</p>
                     <p>HP: 100</p>
                 </div>
             </div>
-            <div class="col-md-3 text-center py-5" id="squirtle-js">
+            <div class="col-md-3 text-center py-5" id="squirtle-js1">
                 <img src="assets/images/squirtle.png" class="img-fluid w-100 h-100" alt="Squirtle" id="squirtle1">
                 <div class="p-3" id="squirtle2">
                     <p>Squirtle</p>
                     <p>HP: 120</p>
                 </div>
             </div>
-            <div class="col-md-3 text-center py-5" id="charmander-js">
+            <div class="col-md-3 text-center py-5" id="charmander-js1">
                 <img src="assets/images/charmander.png" class="img-fluid w-100 h-100" alt="Charmander" id="charmander1">
                 <div class="p-3" id="charmander2">
                     <p>Charmander</p>
                     <p>HP: 150</p>
                 </div>
             </div>
-            <div class="col-md-3 text-center py-5" id="pikachu-js">
+            <div class="col-md-3 text-center py-5" id="pikachu-js1">
                 <img src="assets/images/pikachu.png" class="img-fluid w-100 h-100" alt="Pikachu" id="pikachu1">
                 <div class="p-3" id="pikachu2">
                     <p>Pikachu</p>
                     <p>HP: 180</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container main">
+        <div class="row">
+            <div class="col text-center" id="title">
+                <h3>Pokemons left to battle:</h3>
+            </div>
+        </div>
+
+        <div class="row add-pokemon">
+            <div class="col-md text-center py-5" id="bulbasaur-js2">
+                <img src="assets/images/bulbasaur.png" class="img-fluid w-50 h-50" alt="Bulbasaur" id="bulbasaur1">
+                <div class="p-3 m-auto w-50" id="bulbasaur2">
+                    <p>Bulbasaur</p>
+                    <p>HP: 100</p>
+                </div>
+            </div>
+            <div class="col-md text-center py-5" id="squirtle-js2">
+                <img src="assets/images/squirtle.png" class="img-fluid w-50 h-50" alt="Squirtle" id="squirtle1">
+                <div class="p-3 m-auto w-50" id="squirtle2">
+                    <p>Squirtle</p>
+                    <p>HP: 120</p>
+                </div>
+            </div>
+            <div class="col-md text-center py-5" id="charmander-js2">
+                <img src="assets/images/charmander.png" class="img-fluid w-50 h-50" alt="Charmander" id="charmander1">
+                <div class="p-3 m-auto w-50" id="charmander2">
+                    <p>Charmander</p>
+                    <p>HP: 150</p>
+                </div>
+            </div>
+            <div class="col-md text-center py-5" id="pikachu-js2">
+                <img src="assets/images/pikachu.png" class="img-fluid w-50 h-50" alt="Pikachu" id="pikachu1">
+                <div class="p-3 m-auto w-50" id="pikachu2">
+                    <p>Pikachu</p>
+                    <p>HP: 180</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="fight">
+            <div class="col-4 text-center" id="player">
+                <h3>Player:</h3>
+                <div class="col-md text-center py-5">
+                    <img src="" class="img-fluid w-50 h-50 player-img1" alt="Player">
+                    <div class="p-3 m-auto w-50 player-img2">
+                        <p id="player-name"></p>
+                        <p id="player-hp"></p>
+                    </div>
+                </div>
+            </div>
+            <div class ="col-4 text-center" id="vs">
+                <h3>vs.</h3>
+
+                <br>
+                <br>
+                <br>
+
+                <button type="button" class="btn btn-danger btn-lg">Attack!</button>
+            </div>
+            <div class="col-4 text-center" id="cpu">
+                <h3>Player:</h3>
+                <div class="col-md text-center py-5">
+                    <img src="" class="img-fluid w-50 h-50 cpu-img1" alt="CPU">
+                    <div class="p-3 m-auto w-50 cpu-img2">
+                        <p id="cpu-name"></p>
+                        <p id="cpu-hp"></p>
+                    </div>
                 </div>
             </div>
         </div>
