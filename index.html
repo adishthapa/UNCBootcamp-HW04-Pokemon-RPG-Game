@@ -23,6 +23,17 @@
 
 <body>
 
+    <!-- This is to enable autoplay on Google Chrome -->
+    <iframe src="assets/sounds/silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+
+    <!-- Background music on loop -->
+    <audio autoplay loop id="background-music">
+    </audio>
+
+    <!-- Music played based on pokemon selection -->
+    <audio autoplay id="pokemon-sound">
+    </audio>
+
     <div class="container start">
         <div class="row">
             <div class="col text-center" id="title">
@@ -70,29 +81,32 @@
             </div>
         </div>
 
-        <div class="row add-pokemon">
-            <div class="col-md text-center py-5" id="bulbasaur-js2">
+        <div class="row add-pokemon text-center">
+            <div class="col-12 p-3 my-5 final">
+                <h1 class='bg-danger fb'>Final Battle!!!</h1>
+            </div>
+            <div class="col-md py-5" id="bulbasaur-js2">
                 <input type="image" src="assets/images/bulbasaur.png" width="150" height="150" alt="Bulbasaur" id="bulbasaur1">
                 <div class="p-3 m-auto info" id="bulbasaur2">
                     <p>Bulbasaur</p>
                     <p>HP: 100</p>
                 </div>
             </div>
-            <div class="col-md text-center py-5" id="squirtle-js2">
+            <div class="col-md py-5" id="squirtle-js2">
                 <input type="image" src="assets/images/squirtle.png" width="150" height="150" alt="Squirtle" id="squirtle1">
                 <div class="p-3 m-auto info" id="squirtle2">
                     <p>Squirtle</p>
                     <p>HP: 120</p>
                 </div>
             </div>
-            <div class="col-md text-center py-5" id="charmander-js2">
+            <div class="col-md py-5" id="charmander-js2">
                 <input type="image" src="assets/images/charmander.png" width="150" height="150" alt="Charmander" id="charmander1">
                 <div class="p-3 m-auto info" id="charmander2">
                     <p>Charmander</p>
                     <p>HP: 150</p>
                 </div>
             </div>
-            <div class="col-md text-center py-5" id="pikachu-js2">
+            <div class="col-md py-5" id="pikachu-js2">
                 <input type="image" src="assets/images/pikachu.png" width="150" height="150" alt="Pikachu" id="pikachu1">
                 <div class="p-3 m-auto info" id="pikachu2">
                     <p>Pikachu</p>

@@ -27,6 +27,10 @@ p {
     width: 150px;
 }
 
+.fb {
+    border: 5px dashed #202428;
+}
+
 #title, #vs h3, #vs p{
     background-color: #2a75bb;
     padding: 30px;

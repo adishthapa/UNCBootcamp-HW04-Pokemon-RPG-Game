@@ -18,7 +18,8 @@ $(document).ready(function(){
         counter: 5,
         img: "assets/images/bulbasaur.png",
         bg: "assets/images/grass.gif",
-        color: "#7EC8AC"
+        color: "#7EC8AC",
+        sound: "assets/sounds/bulbasaur.wav"
     }
 
     var squirtle = {
@@ -28,7 +29,8 @@ $(document).ready(function(){
         counter: 10,
         img: "assets/images/squirtle.png",
         bg: "assets/images/water.gif",
-        color: "#96D4CF"
+        color: "#96D4CF",
+        sound: "assets/sounds/squirtle.wav"
     }
 
     var charmander = {
@@ -38,7 +40,8 @@ $(document).ready(function(){
         counter: 15,
         img: "assets/images/charmander.png",
         bg: "assets/images/fire.gif",
-        color: "#F47931"
+        color: "#F47931",
+        sound: "assets/sounds/charmander.wav"
     }
 
     var pikachu = {
@@ -48,14 +51,17 @@ $(document).ready(function(){
         counter: 20,
         img: "assets/images/pikachu.png",
         bg: "assets/images/lightning.gif",
-        color: "#FFD44A"
+        color: "#FFD44A",
+        sound: "assets/sounds/pikachu.mp3"
     }
 
     function reset() {
+        document.getElementById("background-music").setAttribute("src", "assets/sounds/title.mp3");
         $("body").css({
             "background-image": "url('./assets/images/background1.png')"
         });
         $(".main").hide();
+        $(".final").hide();
         $("#bulbasaur-js2").show();
         $("#squirtle-js2").show();
         $("#charmander-js2").show();
@@ -69,6 +75,8 @@ $(document).ready(function(){
     }
 
     function startGame(pokemon) {
+        document.getElementById("background-music").setAttribute("src", "assets/sounds/battle.mp3");
+        document.getElementById("pokemon-sound").setAttribute("src", pokemon.sound);
         $("body").css({
             "background-image": "url('./" + pokemon.bg + "')"
         }); 
@@ -94,6 +102,7 @@ $(document).ready(function(){
     };
 
     function setFighter(pokemon) {
+        document.getElementById("pokemon-sound").setAttribute("src", pokemon.sound);
         $("#comments").html("");
         $("body").css({
             "background-image": "url('./" + pokemon.bg + "')"
@@ -118,6 +127,10 @@ $(document).ready(function(){
 
         fights.push(pokemon);
         fighting = true;
+
+        if (fights.length == 3) {
+            $(".final").show();
+        }
     }
 
     function battle() {
@@ -125,6 +138,7 @@ $(document).ready(function(){
         player_hp -= cpu_counter;
         if (cpu_hp <= 0) {
             if (fights.length === 3) {
+                document.getElementById("background-music").setAttribute("src", "assets/sounds/victory.mp3");
                 $("#comments").html("<p>Congrats! You did it! You Won!</p>")
                 $("#attack").text("Restart Game");
                 $("#cpu").hide();
