@@ -23,6 +23,10 @@ p {
     padding-top: 5%;
 }
 
+.info {
+    width: 150px;
+}
+
 #title, #vs h3{
     background-color: #2a75bb;
     padding: 30px;
@@ -42,9 +46,7 @@ p {
 
 #bulbasaur2 {
     background-color: #7EC8AC;
-    border-left: 3px solid #202428;
-    border-bottom: 3px solid #202428;
-    border-right: 3px solid #202428;
+    border: 3px solid #202428;
 }
 
 #squirtle1 {
@@ -54,9 +56,7 @@ p {
 
 #squirtle2 {
     background-color: #96D4CF;
-    border-left: 3px solid #202428;
-    border-bottom: 3px solid #202428;
-    border-right: 3px solid #202428;
+    border: 3px solid #202428;
 }
 
 #charmander1 {
@@ -66,9 +66,7 @@ p {
 
 #charmander2 {
     background-color: #F47931;
-    border-left: 3px solid #202428;
-    border-bottom: 3px solid #202428;
-    border-right: 3px solid #202428;
+    border: 3px solid #202428;
 }
 
 #pikachu1 {
@@ -78,7 +76,5 @@ p {
 
 #pikachu2 {
     background-color: #FFD44A;
-    border-left: 3px solid #202428;
-    border-bottom: 3px solid #202428;
-    border-right: 3px solid #202428;
+    border: 3px solid #202428;
 }
