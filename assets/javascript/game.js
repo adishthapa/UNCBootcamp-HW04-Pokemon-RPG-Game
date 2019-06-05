@@ -151,6 +151,7 @@ $(document).ready(function(){
                 fighting = false;
             }
         } else if (player_hp <= 0) {
+            document.getElementById("background-music").setAttribute("src", "assets/sounds/loss.mp3");
             player_hp = 0;
             $("#player-hp").html("HP: " + player_hp);
             $("#cpu-hp").html("HP: " + cpu_hp);
