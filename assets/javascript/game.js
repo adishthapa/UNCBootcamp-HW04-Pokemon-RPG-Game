@@ -62,10 +62,10 @@ $(document).ready(function(){
         });
         $(".main").hide();
         $(".final").hide();
-        $("#bulbasaur-js2").show();
-        $("#charmander-js2").show();
-        $("#squirtle-js2").show();
-        $("#pikachu-js2").show();
+        $(".bulbasaur-col").show();
+        $(".charmander-col").show();
+        $(".squirtle-col").show();
+        $(".pikachu-col").show();
         $("#attack").text("Attack!");
         $("#comments").html("");
         $(".start").show();
@@ -95,7 +95,7 @@ $(document).ready(function(){
 
         $("#player-hp").html("HP: " + player_hp);
 
-        $(".add-pokemon " + "#" + pokemon.name.toLowerCase() + "-js2").hide();
+        $("." + pokemon.name.toLowerCase() + "-col").hide();
         $("#cpu").hide();
         $(".start").hide();
         $(".main").show();
@@ -122,7 +122,7 @@ $(document).ready(function(){
 
         $("#cpu-hp").html("HP: " + cpu_hp);
 
-        $("#" + pokemon.name.toLowerCase() + "-js2").hide();
+        $("." + pokemon.name.toLowerCase() + "-col").hide();
         $("#cpu").show();
 
         fights.push(pokemon);
@@ -168,41 +168,41 @@ $(document).ready(function(){
     reset();
 
 
-    $("#bulbasaur-js1").on("click", function() {
+    $(".bulbasaur-js1").on("click", function() {
         startGame(bulbasaur);
     });
 
-    $("#charmander-js1").on("click", function() {
+    $(".charmander-js1").on("click", function() {
         startGame(charmander);
     });
 
-    $("#squirtle-js1").on("click", function() {
+    $(".squirtle-js1").on("click", function() {
         startGame(squirtle);
     });
 
-    $("#pikachu-js1").on("click", function() {
+    $(".pikachu-js1").on("click", function() {
         startGame(pikachu);
     });
 
-    $("#bulbasaur-js2").on("click", function() {
+    $(".bulbasaur-js2").on("click", function() {
         if (fighting === false) {
             setFighter(bulbasaur);
         }
     });
 
-    $("#charmander-js2").on("click", function() {
+    $(".charmander-js2").on("click", function() {
         if (fighting === false) {
             setFighter(charmander);
         }
     });
 
-    $("#squirtle-js2").on("click", function() {
+    $(".squirtle-js2").on("click", function() {
         if (fighting === false) {
             setFighter(squirtle);
         }
     });
 
-    $("#pikachu-js2").on("click", function() {
+    $(".pikachu-js2").on("click", function() {
         if (fighting === false) {
             setFighter(pikachu);
         }
