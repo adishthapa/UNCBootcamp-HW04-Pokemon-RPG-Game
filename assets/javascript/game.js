@@ -2,10 +2,12 @@ $(document).ready(function(){
 
     var player;
     var player_hp;
+    var max_player_hp;
     var player_attack;
     var current_attack;
     var cpu;
     var cpu_hp;
+    var max_cpu_hp;
     var cpu_counter;
     var fights = [];
     var fighting = false;
@@ -90,10 +92,12 @@ $(document).ready(function(){
 
         player = pokemon.name;
         player_hp = pokemon.hp;
+        max_player_hp = pokemon.hp;
         player_attack = pokemon.attack;
         current_attack = pokemon.attack;
 
         $("#player-hp").html("HP: " + player_hp);
+        $("#player .progress-bar").css("width","100%").attr("aria-valuemax", player_hp).attr("aria-valuenow", player_hp); 
 
         $("." + pokemon.name.toLowerCase() + "-col").hide();
         $("#cpu").hide();
@@ -118,9 +122,11 @@ $(document).ready(function(){
 
         cpu = pokemon.name;
         cpu_hp = pokemon.hp;
+        max_cpu_hp = pokemon.hp;
         cpu_counter = pokemon.counter;
 
         $("#cpu-hp").html("HP: " + cpu_hp);
+        $("#cpu .progress-bar").css("width","100%").attr("aria-valuemax", cpu_hp).attr("aria-valuenow", cpu_hp); 
 
         $("." + pokemon.name.toLowerCase() + "-col").hide();
         $("#cpu").show();
@@ -155,12 +161,16 @@ $(document).ready(function(){
             player_hp = 0;
             $("#player-hp").html("HP: " + player_hp);
             $("#cpu-hp").html("HP: " + cpu_hp);
+            $("#player .progress-bar").css("width","0%").attr("aria-valuenow", player_hp);
+            $("#cpu .progress-bar").css("width", ((cpu_hp/max_cpu_hp)*100) + "%").attr("aria-valuenow", cpu_hp);  
             $("#comments").html("<p>Your Pokemon has lost the battle. Please try again!</p>")
             $("#attack").text("Restart Game");
             end = true;
         } else {
             $("#player-hp").html("HP: " + player_hp);
             $("#cpu-hp").html("HP: " + cpu_hp);
+            $("#player .progress-bar").css("width", ((player_hp/max_player_hp)*100) + "%").attr("aria-valuenow", player_hp); 
+            $("#cpu .progress-bar").css("width", ((cpu_hp/max_cpu_hp)*100) + "%").attr("aria-valuenow", cpu_hp); 
             $("#comments").html("<p>Your " + player + " has attacked " + cpu + " for " + current_attack + " damage. " + cpu + " has attacked " + player + " back for " + cpu_counter + " damage.</p>");
             current_attack += player_attack;
         }
