@@ -13,9 +13,9 @@ $(document).ready(function(){
 
     var bulbasaur = {
         name : "Bulbasaur",
-        hp: 108,
-        attack: 10,
-        counter: 10,
+        hp: 100,
+        attack: 15,
+        counter: 5,
         img: "assets/images/bulbasaur.png",
         bg: "assets/images/grass.gif",
         color: "#7EC8AC",
@@ -26,7 +26,7 @@ $(document).ready(function(){
         name: "Squirtle",
         hp: 120,
         attack: 8,
-        counter: 13,
+        counter: 15,
         img: "assets/images/squirtle.png",
         bg: "assets/images/water.gif",
         color: "#96D4CF",
@@ -36,8 +36,8 @@ $(document).ready(function(){
     var charmander = {
         name: "Charmander",
         hp: 150,
-        attack: 6,
-        counter: 16,
+        attack: 5,
+        counter: 20,
         img: "assets/images/charmander.png",
         bg: "assets/images/fire.gif",
         color: "#F47931",
@@ -47,8 +47,8 @@ $(document).ready(function(){
     var pikachu = {
         name: "Pikachu",
         hp: 180,
-        attack: 4,
-        counter: 22,
+        attack: 3,
+        counter: 25,
         img: "assets/images/pikachu.png",
         bg: "assets/images/lightning.gif",
         color: "#FFD44A",
@@ -63,8 +63,8 @@ $(document).ready(function(){
         $(".main").hide();
         $(".final").hide();
         $("#bulbasaur-js2").show();
-        $("#squirtle-js2").show();
         $("#charmander-js2").show();
+        $("#squirtle-js2").show();
         $("#pikachu-js2").show();
         $("#attack").text("Attack!");
         $("#comments").html("");
@@ -93,7 +93,7 @@ $(document).ready(function(){
         player_attack = pokemon.attack;
         current_attack = pokemon.attack;
 
-        $("#player-hp").html(player_hp);
+        $("#player-hp").html("HP: " + player_hp);
 
         $(".add-pokemon " + "#" + pokemon.name.toLowerCase() + "-js2").hide();
         $("#cpu").hide();
@@ -120,7 +120,7 @@ $(document).ready(function(){
         cpu_hp = pokemon.hp;
         cpu_counter = pokemon.counter;
 
-        $("#cpu-hp").html(cpu_hp);
+        $("#cpu-hp").html("HP: " + cpu_hp);
 
         $("#" + pokemon.name.toLowerCase() + "-js2").hide();
         $("#cpu").show();
@@ -152,14 +152,14 @@ $(document).ready(function(){
             }
         } else if (player_hp <= 0) {
             player_hp = 0;
-            $("#player-hp").html(player_hp);
-            $("#cpu-hp").html(cpu_hp);
-            $("#comments").html("Your Pokemon has lost the battle. Please try again!")
+            $("#player-hp").html("HP: " + player_hp);
+            $("#cpu-hp").html("HP: " + cpu_hp);
+            $("#comments").html("<p>Your Pokemon has lost the battle. Please try again!</p>")
             $("#attack").text("Restart Game");
             end = true;
         } else {
-            $("#player-hp").html(player_hp);
-            $("#cpu-hp").html(cpu_hp);
+            $("#player-hp").html("HP: " + player_hp);
+            $("#cpu-hp").html("HP: " + cpu_hp);
             $("#comments").html("<p>Your " + player + " has attacked " + cpu + " for " + current_attack + " damage. " + cpu + " has attacked " + player + " back for " + cpu_counter + " damage.</p>");
             current_attack += player_attack;
         }
@@ -172,12 +172,12 @@ $(document).ready(function(){
         startGame(bulbasaur);
     });
 
-    $("#squirtle-js1").on("click", function() {
-        startGame(squirtle);
-    });
-
     $("#charmander-js1").on("click", function() {
         startGame(charmander);
+    });
+
+    $("#squirtle-js1").on("click", function() {
+        startGame(squirtle);
     });
 
     $("#pikachu-js1").on("click", function() {
@@ -190,15 +190,15 @@ $(document).ready(function(){
         }
     });
 
-    $("#squirtle-js2").on("click", function() {
-        if (fighting === false) {
-            setFighter(squirtle);
-        }
-    });
-
     $("#charmander-js2").on("click", function() {
         if (fighting === false) {
             setFighter(charmander);
+        }
+    });
+
+    $("#squirtle-js2").on("click", function() {
+        if (fighting === false) {
+            setFighter(squirtle);
         }
     });
 
