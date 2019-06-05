@@ -80,7 +80,7 @@ $(document).ready(function(){
         $("body").css({
             "background-image": "url('./" + pokemon.bg + "')"
         }); 
-        $("#player h3").css({
+        $("#player h5").css({
             "background-color": pokemon.color
         });
         $(".player-img1").attr("src", pokemon.img);
@@ -107,7 +107,7 @@ $(document).ready(function(){
         $("body").css({
             "background-image": "url('./" + pokemon.bg + "')"
         }); 
-        $("#cpu h3").css({
+        $("#cpu h5").css({
             "background-color": pokemon.color
         });
         $(".cpu-img1").attr("src", pokemon.img);

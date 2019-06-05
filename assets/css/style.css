@@ -31,14 +31,13 @@ p {
     border: 5px dashed #202428;
 }
 
-#title, #vs h3, #vs p{
+#title, #vs h5, #vs p{
     background-color: #2a75bb;
     padding: 30px;
     border: 5px dashed #202428;
 }
 
-#player h3, #cpu h3 {
-    background-color: #ffcb05;
+#player h5, #cpu h5 {
     padding: 30px;
     border: 5px dashed #202428;
 }
