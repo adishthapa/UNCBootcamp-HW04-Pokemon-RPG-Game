@@ -1,4 +1,4 @@
-# Spongebob Word Guess Game
+# Pokemon RPG Game
 
 A single-player **Pokemon** RPG game where the user chooses their Pokemon at the start of the game and battles other Pokemons.
 
