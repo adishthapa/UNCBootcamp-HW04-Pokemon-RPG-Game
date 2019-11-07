@@ -23,4 +23,4 @@ A single-player **Pokemon** RPG game where the user chooses their Pokemon at the
 
 ## Deployed Link
 
-[https://adishthapa.github.io/UNCBootcamp-HW04-Pokemon-RPG-Game](https://adishthapa.github.io/UNCBootcamp-HW04-Pokemon-RPG-Game)
+[https://adishthapa.com/pokemon-rpg-game](https://adishthapa.com/pokemon-rpg-game)
